@@ -108,18 +108,38 @@ const questions = [
             }
         }
 
-    }
+    },
+    {
+        type: 'confirm',
+        name: 'confirmlisense',
+        message: 'Wanna use any lisence?',
+    },
+    {
+        type: 'input',
+        name: 'lisense',
+        message: 'Tell me ',
+        when : ({confirmlisense}) => {
+            if (confirmlisense) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+    },
+
 
 ];
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-    fs.writeFile(filename, data, err => {
+function writeToFile(fileName, data) {
+    fs.writeFile(`./${fileName}.md`, data, err => {
         if (err) {
             console.log(err)
         }
     })
+}
 // TODO: Create a function to initialize app
 function init() {
     return inquirer.prompt(questions)
@@ -129,4 +149,7 @@ function init() {
 init()
 .then(userdaya => {
     console.log(userdaya)
-});
+    return generateMarkdown(userdaya)
+}).then (text => {
+    console.log(text)
+    writeToFile('README', text)})
