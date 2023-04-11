@@ -1,16 +1,16 @@
 {
-  "name": "hw7",
+  "name": "static-site",
   "version": "1.0.0",
-  "description": "[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)",
+  "description": "![badge](https://img.shields.io/badge/license-mit-blue)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "fs": "^0.0.1-security",
-    "inquirer": "^6.5.1"
-  }
+    "inquirer": "^6.3.1"
+  },
+  "keywords": []
 }
