@@ -32,6 +32,32 @@ function renderLicenseSection(license) {
   }
 }
 
+function renderCredits(credits){
+  if (credits !== undefined) {
+    return `${credits}`
+  } else {
+    return ' '
+  }
+}
+
+
+function renderInstallment(Installment){
+  if (Installment !== undefined) {
+    return `${Installment}`
+  } else {
+    return ' '
+  }
+}
+
+function renderUsage(usage){
+  if (usage !== undefined) {
+    return `${usage}`
+  } else {
+    return ' '
+  }
+}
+
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   
@@ -47,19 +73,24 @@ function generateMarkdown(data) {
 
   ## Installment
 
-  ${data.installment}
+  ${renderInstallment(data.installment)}
 
   ## Usage
 
-  ${data.usage}
+  ${renderUsage(data.usage)}
 
   ## Credits
 
-  ${data.credits}
+  ${renderCredits(data.credits)}
 
   ## Lisense
 
   ${renderLicenseSection(data.lisense)}
+
+  ## Contact info
+  
+  www.github.com/${data.username}
+  My email: ${data.emailaddress}
 
 `;
 }

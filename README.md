@@ -1,27 +1,30 @@
 
-  # qwlkerjqlwkerj
+  # Read me Helper
   
-    ![badge](https://img.shields.io/badge/license-mit-blue)
+  ![badge](https://img.shields.io/badge/license-mit-blue)
 
     
 
   ## Description
 
-  laisdfuaosidfua
+  Generate your own Readme.md
 
   ## Installment
 
-  asdlkfjadfklas
+  npm i 
 
   ## Usage
 
-  asdlkfjasdlfkasj
+  node index.js
 
   ## Credits
 
-  qpwoeriqwoperi
+  None
 
   ## Lisense
 
   [mit](https://choosealicense.com/licenses/mit)
 
+  ## Screenshot
+
+  
