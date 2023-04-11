@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs')
 const inquirer = require('inquirer')
+const generateMarkdown = require('./utils/generateMarkdown')
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -27,7 +28,88 @@ const questions = [
             }
         }
 
+    },
+    {
+        type: 'confirm',
+        name: 'confirmInstallment',
+        message: 'Any Installment process?',
+    },
+    {
+        type: 'input',
+        name: 'installment',
+        message: 'Your Installment process',
+        when : ({confirmInstallment}) => {
+            if (confirmInstallment) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+    },
+    {
+        type: 'confirm',
+        name: 'confirmUsage',
+        message: 'Any usage explaination?',
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'Your Installment process',
+        when : ({confirmUsage}) => {
+            if (confirmUsage) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+    },
+    {
+        type: 'confirm',
+        name: 'confirmCredits',
+        message: 'Any helpers involved?',
+    },
+    {
+        type: 'input',
+        name: 'credits',
+        message: 'List Your helper here',
+        when : ({confirmCredits}) => {
+            if (confirmCredits) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+    },
+    {
+        type: 'input',
+        name: 'username',
+        message: 'whats your github username',
+        validate : username => {
+            if (username) {
+                return true
+            } else {
+                console.log('say None if you dont have one~')
+            }
+        }
+
+    },
+    {
+        type: 'input',
+        name: 'emailaddress',
+        message: 'Whats your email address',
+        validate : emailaddress => {
+            if (emailaddress) {
+                return true
+            } else {
+                console.log('can use your school email xD')
+            }
+        }
+
     }
+
 ];
 
 
@@ -39,7 +121,12 @@ function writeToFile(fileName, data) {}
         }
     })
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    return inquirer.prompt(questions)
+    .then(data => {return data})}
 
 // Function call to initialize app
-init();
+init()
+.then(userdaya => {
+    console.log(userdaya)
+});
