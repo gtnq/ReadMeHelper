@@ -31,7 +31,7 @@
   
   ## Demo
   
-  ![](utils/screen-capture.webm)
+  ![]([utils/screen-capture.webm](https://github.com/gtnq/ReadMeHelper/blob/main/utils/screen-capture.gif))
   
   ## Contact Info
   My email: ttonyyu98@gmail.com
